@@ -4,24 +4,25 @@
   "description": "Debt reduction website which provides a personalized plan to reduce debt to 0",
   "main": "index.js",
   "scripts": {
-    "test": "jest --no-cache ./src/*"
-  },
-  "author": "Tyrel Clayton",
-  "license": "MIT",
-  "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
     "test": "jest --no-cache ./src/*",
     "watch": "jest --no-cache --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
     "build": "webpack --mode production"
   },
+  "author": "Tyrel Clayton",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.9.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
@@ -30,5 +31,20 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
-  }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
+  "setupFilesAfterEnv": [
+    "<rootDir>/setupTests.js"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!src/index.js"
+  ]
 }
