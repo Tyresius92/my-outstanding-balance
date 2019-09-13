@@ -1,0 +1,11 @@
+{
+  "name": "my-outstanding-balance",
+  "version": "1.0.0",
+  "description": "Debt reduction website which provides a personalized plan to reduce debt to 0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --no-cache ./src/*"
+  },
+  "author": "Tyrel Clayton",
+  "license": "MIT"
+}
