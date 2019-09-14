@@ -1,13 +1,15 @@
 {
   "name": "my-outstanding-balance",
   "version": "1.0.0",
-  "description": "Debt reduction website which provides a personalized plan to reduce debt to 0",
+  "description": "Website that provides a personalized plan to reduce debt to 0",
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
+    "lint": "node_modules/.bin/eslint --ext js,jsx ./src",
     "test": "jest --no-cache ./src/*",
     "watch": "jest --no-cache --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
+    "sniff": "npm run lint && npm run cover",
     "build": "webpack --mode production"
   },
   "author": "Tyrel Clayton",
@@ -17,11 +19,16 @@
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
@@ -36,15 +43,15 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
-  },
-  "setupFilesAfterEnv": [
-    "<rootDir>/setupTests.js"
-  ],
-  "collectCoverageFrom": [
-    "src/**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**",
-    "!src/index.js"
-  ]
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!src/index.js"
+    ]
+  }
 }
