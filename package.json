@@ -1,16 +1,16 @@
 {
   "name": "my-outstanding-balance",
   "version": "1.0.0",
-  "description": "Debt reduction website which provides a personalized plan to reduce debt to 0",
+  "description": "Website that provides a personalized plan to reduce debt to 0",
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
+    "lint": "node_modules/.bin/eslint --ext js,jsx ./src",
     "test": "jest --no-cache ./src/*",
     "watch": "jest --no-cache --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
-    "prebuild": "npm run lint && npm run cover",
-    "build": "webpack --mode production",
-    "lint": "node_modules/.bin/eslint --ext js,jsx ./src"
+    "sniff": "npm run lint && npm run cover",
+    "build": "webpack --mode production"
   },
   "author": "Tyrel Clayton",
   "license": "MIT",
