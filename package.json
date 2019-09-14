@@ -8,6 +8,7 @@
     "test": "jest --no-cache ./src/*",
     "watch": "jest --no-cache --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
+    "prebuild": "npm run lint && npm run cover",
     "build": "webpack --mode production",
     "lint": "node_modules/.bin/eslint --ext js,jsx ./src"
   },
@@ -25,6 +26,8 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
     "style-loader": "^1.0.0",
@@ -40,15 +43,15 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
-  },
-  "setupFilesAfterEnv": [
-    "<rootDir>/setupTests.js"
-  ],
-  "collectCoverageFrom": [
-    "src/**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**",
-    "!src/index.js"
-  ]
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!src/index.js"
+    ]
+  }
 }
