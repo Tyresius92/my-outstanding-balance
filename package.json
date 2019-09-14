@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
+    "checkPrettier": "prettier --check \"src/**/*.js\"",
     "lint": "node_modules/.bin/eslint --ext js,jsx ./src",
     "test": "jest --no-cache ./src/*",
     "watch": "jest --no-cache --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
-    "sniff": "npm run lint && npm run cover",
+    "sniff": "npm run checkPrettier && npm run lint && npm run cover",
     "build": "webpack --mode production"
   },
   "author": "Tyrel Clayton",
