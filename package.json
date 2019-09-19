@@ -7,8 +7,8 @@
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
     "checkPrettier": "prettier --check \"src/**/*.js\"",
     "lint": "node_modules/.bin/eslint --ext js,jsx ./src",
-    "test": "jest --no-cache ./src/*",
-    "watch": "jest --no-cache --watch ./src/*",
+    "test": "jest --no-cache --colors ./src/*",
+    "watch": "jest --no-cache --colors --watch ./src/*",
     "cover": "jest --no-cache --coverage ./src/* && sonar-scanner",
     "sniff": "npm run checkPrettier && npm run lint && npm run cover",
     "build": "webpack --mode production"
@@ -37,7 +37,9 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0"
   },
   "jest": {

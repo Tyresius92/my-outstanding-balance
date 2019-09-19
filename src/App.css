@@ -1,4 +1,80 @@
-.App {
-	font-family: Helvetica, sans-serif;
-	border: 10px solid red;
+:root {
+	/* https://paletton.com/#uid=42E0u0keJqQ5uIp9SvOjUlRoQgS */
+
+	/* Main Primary color */
+	--mob-green-mid: rgba(133, 187, 101, 1);
+	--mob-green-highlight: rgba(243, 255, 236, 1);
+	--mob-green-dark: rgba(51, 120, 11, 1);
+
+	--mob-red-mid: rgba(160, 50, 76, 1);
+	--mob-red-light: rgba(196, 106, 127, 1);
+	--mob-red-highlight: rgba(255, 240, 243, 1);
+	--mob-red-dark: rgba(126, 11, 38, 1);
+
+	--mob-orange-dark: rgba(137, 62, 12, 1);
+	--mob-orange-mid: rgba(174, 102, 55, 1);
+}
+
+h1 {
+	border: 10px solid var(--mob-green-dark);
+	font-family: "Cormorant", serif;
+}
+
+body {
+	font-family: "Cormorant", serif;
+}
+
+.bg-mob {
+	background-color: var(--mob-green-highlight);
+}
+
+.navbar-mob {
+	color: var(--mob-red-mid);
+}
+
+.navbar-brand {
+	/*font-size: 2rem;*/
+}
+
+.btn-variation {
+	background-color: var(--mob-red-mid);
+	color: var(--mob-green-highlight);
+}
+
+.btn-cta {
+	color: var(--mob-green-highlight);
+	background-color: var(--mob-green-dark);
+	border-color: var(--mob-green-dark);
+}
+
+.btn-cta:hover {
+	color: var(--mob-green-dark);
+	background-color: var(--mob-green-highlight);
+	border-color: var(--mob-green-highlight);
+}
+
+.btn-cta:focus,
+.btn-cta.focus {
+	box-shadow: 0 0 0 0.2rem rgba(133, 187, 101, 0.5);
+}
+
+.btn-cta.disabled,
+.btn-cta:disabled {
+	color: var(--mob-green-highlight);
+	background-color: var(--mob-green-dark);
+	border-color: var(--mob-green-dark);
+}
+
+.btn-cta:not(:disabled):not(.disabled):active,
+.btn-cta:not(:disabled):not(.disabled).active,
+.show > .btn-cta.dropdown-toggle {
+	color: var(--mob-green-dark);
+	background-color: var(--mob-green-highlight);
+	border-color: var(--mob-green-mid);
+}
+
+.btn-cta:not(:disabled):not(.disabled):active:focus,
+.btn-cta:not(:disabled):not(.disabled).active:focus,
+.show > .btn-cta.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0.2rem rgba(133, 187, 101, 0.5);
 }
