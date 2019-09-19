@@ -31,6 +31,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
+    "prettier": "1.18.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.8",
@@ -198,7 +199,6 @@
       ],
       "no-duplicate-imports": "error",
       "no-useless-rename": "error",
-      "no-var": "error",
       "prefer-arrow-callback": "error",
       "prefer-const": "error"
     },
