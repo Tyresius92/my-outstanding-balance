@@ -1,22 +1,34 @@
 import React from "react";
-import BSNavbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
-const Navbar = () => (
-  <BSNavbar bg="mob" expand="lg" variant="mob">
-    <Container>
-      <BSNavbar.Brand enzymeid="navbarBrand">
-        My Outstanding Balance
-      </BSNavbar.Brand>
-      <BSNavbar.Toggle
-        enzymeid="navbarToggle"
-        aria-controls="basic-navbar-nav"
-      />
-      <BSNavbar.Collapse enzymeid="navbarCollapse" id="basic-navbar-nav">
-        <div />
-      </BSNavbar.Collapse>
-    </Container>
-  </BSNavbar>
-);
+const useStyles = makeStyles(() => ({
+  root: {
+    flexGrow: 1
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
+
+const Navbar = () => {
+  const classes = useStyles();
+
+  return (
+    <React.Fragment>
+      <AppBar position="static">
+        <Toolbar>
+          <MonetizationOnIcon />
+          <Typography variant="h6" className={classes.title}>
+            My Outstanding Balance
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
+  );
+};
 
 export default Navbar;
