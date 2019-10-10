@@ -12,7 +12,6 @@ describe("TextInput", () => {
         label="theLabel"
         value=""
         placeholder=""
-        className=""
         onChange={mockFn}
       />
     );
