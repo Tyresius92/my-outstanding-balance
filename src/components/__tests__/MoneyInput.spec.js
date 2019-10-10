@@ -12,7 +12,6 @@ describe("MoneyInput", () => {
         label="theLabel"
         value=""
         placeholder=""
-        className=""
         onChange={mockFn}
       />
     );

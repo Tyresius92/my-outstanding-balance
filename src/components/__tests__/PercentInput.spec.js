@@ -12,7 +12,6 @@ describe("PercentInput", () => {
         label="theLabel"
         value=""
         placeholder=""
-        className=""
         onChange={mockFn}
       />
     );
