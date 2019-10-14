@@ -8,9 +8,11 @@ My Outstanding Balance is a website which allows the user to input their debts a
 
 1. Clone the repo, then run `npm install`. All dependencies should be installed as a result, including prettier and project prettier configuration.
 
-2. Optional, but recommended: Install a local instance of SonarQube and Sonar Scanner on your machine (NOT in the repo). Ensure that your PR passes the quality gate (in particular, 80% test coverage is required for all PRs). If your code does not pass the quality gate, it will not be merged until it does.
+2. You will then be able to use all of the scripts set up in our `package.json`.
 
-3. When you push your PR, a CircleCI build will be kicked off automatically. Please ensure that your build succeeds. If it fails, please examine the logs to determine the reason. Please feel free to ask questions if you need to!
+3. Optional, but recommended: Install a local instance of SonarQube and Sonar Scanner on your machine (NOT in the repo). Ensure that your PR passes the quality gate (in particular, 80% test coverage is required for all PRs). If your code does not pass the quality gate, it will not be merged until it does (we will verify this locally in our setup before merging your changes).
+
+4. When you push your PR, a CircleCI build will be kicked off automatically. Please ensure that your build succeeds. If it fails, please examine the logs to determine the reason. Please feel free to ask questions if you need to!
 
 ### What do I work on?
 
