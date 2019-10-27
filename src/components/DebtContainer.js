@@ -1,44 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import Container from "@material-ui/core/Container";
 import DebtList from "./DebtList";
 import DebtInputForm from "./DebtInputForm";
 import PayoffProjectionContainer from "./PayoffProjectionContainer";
 import PaymentAmountInput from "./PaymentAmountInput";
 
-class DebtContainer extends React.Component {
-  state = {
-    debts: [],
-    maxPayment: ""
-  };
+const DebtContainer = () => {
+  const [debts,setDebts] = useState([]);
+  const [maxPayment,setMaxPayment] = useState("");
 
-  createDebtRecord = newDebt => {
-    this.setState({
-      debts: this.state.debts.concat([newDebt])
-    });
-  };
+  return (
+    <Container>
+      <DebtInputForm saveDebt={(newDebt) => setDebts(debts.concat(newDebt))} />
+      <DebtList debts={debts} />
+      <PaymentAmountInput
+        value={maxPayment}
+        updatePaymentAmount={(e) => setMaxPayment(e.target.value)}
+      />
+      <PayoffProjectionContainer
+        paymentAmount={maxPayment}
+        debts={debts}
+      />
+    </Container>
+  );
 
-  updatePaymentAmount = e => {
-    this.setState({
-      maxPayment: e.target.value
-    });
-  };
-
-  render() {
-    return (
-      <Container>
-        <DebtInputForm saveDebt={this.createDebtRecord} />
-        <DebtList debts={this.state.debts} />
-        <PaymentAmountInput
-          value={this.state.maxPayment}
-          updatePaymentAmount={this.updatePaymentAmount}
-        />
-        <PayoffProjectionContainer
-          paymentAmount={this.state.maxPayment}
-          debts={this.state.debts}
-        />
-      </Container>
-    );
-  }
 }
 
 export default DebtContainer;
