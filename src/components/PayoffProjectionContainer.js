@@ -4,7 +4,7 @@ import { getPayoffProjections } from "../utils/debt_projections";
 import ProjectionBarChart from "./ProjectionBarChart";
 import Grid from "@material-ui/core/Grid";
 
-const PayoffProjectionContainer = (props) => {
+const PayoffProjectionContainer = props => {
   const [projections, setProjections] = useState([]);
 
   useMemo(() => {
@@ -13,19 +13,16 @@ const PayoffProjectionContainer = (props) => {
       props.paymentAmount,
       Date.now()
     );
-    setProjections(balanceProjections)
-  },[props])
+    setProjections(balanceProjections);
+  }, [props]);
 
   return (
     <div style={{ height: 500, margin: "20px", padding: "20px" }}>
       <Grid container spacing={3}>
         <Grid item xs={6} s={2}>
           <div>
-            Total Interest: 
-            {projections.reduce(
-              (acc, proj) => acc + proj.interest,
-              0
-            )}
+            Total Interest:
+            {projections.reduce((acc, proj) => acc + proj.interest, 0)}
           </div>
         </Grid>
         <Grid item xs={12} s={10}>
@@ -34,7 +31,7 @@ const PayoffProjectionContainer = (props) => {
       </Grid>
     </div>
   );
-}
+};
 
 PayoffProjectionContainer.propTypes = {
   debts: PropTypes.arrayOf(
