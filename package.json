@@ -13,6 +13,12 @@
     "sniff": "npm run checkPrettier && npm run lint && npm run cover",
     "build": "webpack --mode production"
   },
+  "pre-commit": [
+    "checkPrettier"
+  ],
+  "pre-push": [
+    "sniff"
+  ],
   "author": "Tyrel Clayton",
   "license": "MIT",
   "devDependencies": {
@@ -32,6 +38,8 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
     "prettier": "1.18.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
