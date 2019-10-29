@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { getPayoffProjections } from "../utils/debt_projections";
 import ProjectionBarChart from "./ProjectionBarChart";
-import Grid from "@material-ui/core/Grid";
+import { Grid, Typography } from "@material-ui/core";
 
 const PayoffProjectionContainer = props => {
   const [projections, setProjections] = useState([]);
@@ -20,11 +20,13 @@ const PayoffProjectionContainer = props => {
     <div style={{ height: 500, margin: "20px", padding: "20px" }}>
       <Grid container spacing={3}>
         <Grid item xs={6} s={2}>
-          <div>
-            Total Interest: $
-            {projections
-              .reduce((acc, proj) => acc + proj.interest, 0)
-              .toFixed(2)}
+                               <div>
+            <Typography>
+              Total Interest: $
+              {projections
+                .reduce((acc, proj) => acc + proj.interest, 0)
+                .toFixed(2)}
+            </Typography>
           </div>
         </Grid>
         <Grid item xs={12} s={10}>
