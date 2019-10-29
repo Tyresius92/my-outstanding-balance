@@ -21,8 +21,10 @@ const PayoffProjectionContainer = props => {
       <Grid container spacing={3}>
         <Grid item xs={6} s={2}>
           <div>
-            Total Interest:
-            {projections.reduce((acc, proj) => acc + proj.interest, 0)}
+            Total Interest: $
+            {projections
+              .reduce((acc, proj) => acc + proj.interest, 0)
+              .toFixed(2)}
           </div>
         </Grid>
         <Grid item xs={12} s={10}>
