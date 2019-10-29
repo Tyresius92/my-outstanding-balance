@@ -20,7 +20,7 @@ const PayoffProjectionContainer = props => {
     <div style={{ height: 500, margin: "20px", padding: "20px" }}>
       <Grid container spacing={3}>
         <Grid item xs={6} s={2}>
-                               <div>
+          <div>
             <Typography>
               Total Interest: $
               {projections

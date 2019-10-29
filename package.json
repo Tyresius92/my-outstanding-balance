@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --mode development --hot --open",
     "checkPrettier": "prettier --check \"src/**/*.js\"",
-    "prettify": "prettier --write --changed-only \"src/**/*.js\"",
+    "prettify": "prettier --config package.json --write \"src/**/*.js\"",
     "lint": "node_modules/.bin/eslint --ext js,jsx ./src",
     "test": "jest --no-cache --colors ./src/*",
     "watch": "jest --no-cache --colors --watch ./src/*",
